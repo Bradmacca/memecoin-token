@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MemeCoin (MEME) - The Ultimate Meme Token</title>
+    <meta name="description" content="MemeCoin is a cryptocurrency token inspired by the viral meme culture, representing the humorous yet relatable financial sentiments of the crypto community. It aims to provide both entertainment and utility within the decentralized finance space.">
+    <style>
+        
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      
+      body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif; line-height: 1.6; color: #333; overflow-x: hidden; }
+      
+      .navbar { position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); z-index: 1000; padding: 1rem 0; box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1); }
+      
+      .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+      
+      .nav-logo { display: flex; align-items: center; gap: 0.5rem; }
+      
+      .logo-img { width: 40px; height: 40px; border-radius: 50%; }
+      
+      .logo-placeholder { width: 40px; height: 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 0.9rem; }
+      
+      .logo-text { font-size: 1.5rem; font-weight: bold; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+      
+      .nav-menu { display: flex; align-items: center; gap: 2rem; }
+      
+      .nav-link { color: #333; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+      .nav-link:hover { color: #667eea; }
+      
+      .buy-button { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 50px; font-weight: bold; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; }
+      .buy-button:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3); }
+      
+      .hero { min-height: 100vh; position: relative; display: flex; align-items: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; overflow: hidden; }
+      
+      .hero-background { position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.3; animation: float 6s ease-in-out infinite; }
+      
+      @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+      
+      .hero-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+      
+      .hero-content { z-index: 10; }
+      
+      .hero-title { font-size: 3.5rem; font-weight: 900; margin-bottom: 1rem; text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
+      
+      .hero-subtitle { font-size: 1.5rem; margin-bottom: 1rem; opacity: 0.9; }
+      
+      .hero-description { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.8; line-height: 1.8; }
+      
+      .hero-stats { display: flex; gap: 2rem; margin-bottom: 3rem; }
+      
+      .stat-card { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 1.5rem; border-radius: 20px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.2); }
+      
+      .stat-number { font-size: 2rem; font-weight: bold; display: block; margin-bottom: 0.5rem; }
+      
+      .stat-label { font-size: 0.9rem; opacity: 0.8; }
+      
+      .hero-actions { display: flex; gap: 1rem; }
+      
+      .primary-btn { background: rgba(255, 255, 255, 0.9); color: #667eea; padding: 1rem 2rem; border: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; cursor: pointer; transition: all 0.3s; }
+      .primary-btn:hover { background: white; transform: translateY(-3px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); }
+      
+      .secondary-btn { background: transparent; color: white; padding: 1rem 2rem; border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 50px; font-weight: bold; font-size: 1.1rem; cursor: pointer; transition: all 0.3s; }
+      .secondary-btn:hover { background: rgba(255, 255, 255, 0.1); border-color: white; }
+      
+      .hero-meme { display: flex; justify-content: center; align-items: center; }
+      
+      .meme-image { max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); animation: pulse 4s ease-in-out infinite; }
+      
+      @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+      
+      .about-section, .tokenomics-section, .community-section { padding: 6rem 0; }
+      
+      .about-section { background: #f8f9fa; }
+      .tokenomics-section { background: white; }
+      .community-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+      
+      .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+      
+      .section-title { text-align: center; font-size: 3rem; font-weight: bold; margin-bottom: 3rem; }
+      
+      .about-content { display: grid; gap: 4rem; }
+      
+      .about-description { font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem; color: #666; }
+      
+      .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+      
+      .feature-card { background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); text-align: center; transition: transform 0.3s; }
+      .feature-card:hover { transform: translateY(-10px); }
+      
+      .feature-icon { font-size: 3rem; margin-bottom: 1rem; }
+      
+      .tokenomics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+      
+      .tokenomics-card { background: white; padding: 2rem; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); transition: transform 0.3s; }
+      .tokenomics-card:hover { transform: translateY(-10px); }
+      
+      .tokenomics-number { font-size: 3rem; font-weight: bold; color: #667eea; margin-bottom: 0.5rem; }
+      
+      .tokenomics-label { font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem; }
+      
+      .tokenomics-detail { color: #666; }
+      
+      .social-links { display: flex; justify-content: center; gap: 2rem; margin: 3rem 0; }
+      
+      .social-link { background: rgba(255, 255, 255, 0.1); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: bold; transition: all 0.3s; backdrop-filter: blur(10px); }
+      .social-link:hover { background: rgba(255, 255, 255, 0.2); transform: translateY(-3px); }
+      
+      .final-cta { text-align: center; margin-top: 4rem; }
+      
+      .mega-buy-button { background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); color: white; padding: 1.5rem 3rem; border: none; border-radius: 50px; font-weight: bold; font-size: 1.3rem; cursor: pointer; transition: all 0.3s; box-shadow: 0 15px 35px rgba(238, 90, 36, 0.3); }
+      .mega-buy-button:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(238, 90, 36, 0.4); }
+      
+      @media (max-width: 768px) {
+        .hero-container { grid-template-columns: 1fr; text-align: center; }
+        .hero-title { font-size: 2.5rem; }
+        .nav-menu { display: none; }
+        .hero-stats { justify-content: center; flex-wrap: wrap; }
+        .hero-actions { flex-direction: column; align-items: center; }
+        .features-grid, .tokenomics-grid { grid-template-columns: 1fr; }
+        .social-links { flex-wrap: wrap; }
+      }
+    
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="[object Object]" alt="MemeCoin logo" class="logo-img">
+                <span class="logo-text">MemeCoin</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#tokenomics" class="nav-link">Tokenomics</a>
+                <a href="#community" class="nav-link">Community</a>
+                <button class="buy-button">Buy MEME</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">MemeCoin</h1>
+                <h2 class="hero-subtitle">The Meme Token That's Taking Over</h2>
+                <p class="hero-description">MemeCoin is a cryptocurrency token inspired by the viral meme culture, representing the humorous yet relatable financial sentiments of the crypto community. It aims to provide both entertainment and utility within the decentralized finance space.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">100</div>
+                        <div class="stat-label">Viral Score</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">🚀</div>
+                        <div class="stat-label">Moon Bound</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">1B+</div>
+                        <div class="stat-label">Max Supply</div>
+                    </div>
+                </div>
+
+                <div class="hero-actions">
+                    <button class="primary-btn">Buy MEME Now</button>
+                    <button class="secondary-btn">Join Community</button>
+                </div>
+            </div>
+            
+            
+            <div class="hero-meme">
+                <img src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-puF56Rl9C9uV9Yz48rwAIyv8/user-6G29urWHFd7P8M87YrA0hof7/img-B6Otj19l2rBk3MK3YMctdnyu.png?st=2025-08-10T10%3A49%3A29Z&se=2025-08-10T12%3A49%3A29Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=32836cae-d25f-4fe9-827b-1c8c59c442cc&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-08-09T22%3A50%3A50Z&ske=2025-08-10T22%3A50%3A50Z&sks=b&skv=2024-08-04&sig=yLUq6qCc7di5o4DR5uqp9C3SxbbL/VwIswauBwpfddk%3D" alt="Original MemeCoin meme" class="meme-image">
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About MemeCoin</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-description">Boyfriend: 'Bitcoin at $100K' Girlfriend: 'My portfolio still down bad fr fr' Other Girl: 'Actual groceries and bills'</p>
+                    <p>Born from the wildest corners of the internet, MemeCoin represents the perfect fusion of meme culture and decentralized finance. This isn't just another token - it's a movement.</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Viral by Design</h3>
+                        <p>AI-analyzed meme potential with maximum shareability and community engagement built-in.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Secure & Transparent</h3>
+                        <p>Built on battle-tested blockchain tech with locked liquidity and verifiable smart contracts.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌟</div>
+                        <h3>Community First</h3>
+                        <p>Driven by an passionate community of meme lords, crypto enthusiasts, and moon chasers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics -->
+    <section id="tokenomics" class="tokenomics-section">
+        <div class="container">
+            <h2 class="section-title">Tokenomics</h2>
+            <div class="tokenomics-grid">
+                <div class="tokenomics-card">
+                    <div class="tokenomics-number">1B</div>
+                    <div class="tokenomics-label">Total Supply</div>
+                    <div class="tokenomics-detail">MEME tokens</div>
+                </div>
+                <div class="tokenomics-card">
+                    <div class="tokenomics-number">85%</div>
+                    <div class="tokenomics-label">Liquidity Pool</div>
+                    <div class="tokenomics-detail">Locked Forever</div>
+                </div>
+                <div class="tokenomics-card">
+                    <div class="tokenomics-number">10%</div>
+                    <div class="tokenomics-label">Community</div>
+                    <div class="tokenomics-detail">Rewards & Airdrops</div>
+                </div>
+                <div class="tokenomics-card">
+                    <div class="tokenomics-number">5%</div>
+                    <div class="tokenomics-label">Marketing</div>
+                    <div class="tokenomics-detail">Growth & Partnerships</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="community-section">
+        <div class="container">
+            <h2 class="section-title">Join the MEME Army</h2>
+            <p class="community-description">Ready to be part of the next viral crypto phenomenon?</p>
+            
+            <div class="social-links">
+                <a href="#" class="social-link twitter">
+                    <span>🐦</span> Twitter
+                </a>
+                <a href="#" class="social-link telegram">
+                    <span>📱</span> Telegram
+                </a>
+                <a href="#" class="social-link discord">
+                    <span>💬</span> Discord
+                </a>
+                <a href="#" class="social-link reddit">
+                    <span>📖</span> Reddit
+                </a>
+            </div>
+
+            <div class="final-cta">
+                <h3>Don't Miss the Next 1000x</h3>
+                <button class="mega-buy-button">Buy MEME Now 🚀</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      document.querySelectorAll('.primary-btn, .secondary-btn, .buy-button, .mega-buy-button').forEach(button => {
+        button.addEventListener('click', function() {
+          for (let i = 0; i < 6; i++) {
+            setTimeout(() => {
+              const sparkle = document.createElement('div');
+              sparkle.innerHTML = '✨';
+              sparkle.style.cssText = 'position: fixed; pointer-events: none; font-size: 1.5rem; z-index: 9999; animation: sparkle 1s ease-out forwards; left: ' + Math.random() * window.innerWidth + 'px; top: ' + Math.random() * window.innerHeight + 'px;';
+              document.body.appendChild(sparkle);
+              setTimeout(() => sparkle.remove(), 1000);
+            }, i * 100);
+          }
+          alert('🚀 Ready to buy? Connect your wallet and join the moon mission!');
+        });
+      });
+
+      const style = document.createElement('style');
+      style.textContent = '@keyframes sparkle { 0% { opacity: 1; transform: scale(0) rotate(0deg); } 100% { opacity: 0; transform: scale(1.5) rotate(180deg); } }';
+      document.head.appendChild(style);
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+      document.querySelectorAll('.feature-card, .tokenomics-card, .stat-card').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        observer.observe(el);
+      });
+
+      const fadeStyle = document.createElement('style');
+      fadeStyle.textContent = '@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }';
+      document.head.appendChild(fadeStyle);
+
+      console.log('🚀 Token website loaded and ready for moon mission!');
+    
+    </script>
+</body>
+</html>
